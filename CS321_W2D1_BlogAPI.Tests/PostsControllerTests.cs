@@ -38,5 +38,12 @@ namespace CS321_W2D1_BlogAPI.Tests
             // assert
             Assert.IsType<OkObjectResult>(result);
         }
+         [Fact]
+         public void Delete_ReturnsNoContent()
+         {
+            var controller = new PostsController (new PostService());
+            var result = controller.Delete(1);
+            Assert.IsType<NoContentRsult>(Result);
+         }
     }
 }
